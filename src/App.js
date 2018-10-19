@@ -27,13 +27,15 @@ class App extends Component {
   clickedPic = id => {
     //Variables to be updated
     let friendsClicked = this.state.friendsClicked;
-    let score = this.state.score;
 
     //Handle clicked image- if not clicked, continue, if clicked, reset score
     if (friendsClicked.indexOf(id) === -1) {
       this.handleIncrement();
       //Store id in 'clicked array'
-      friendsClicked.push(id);
+      friendsClicked.push(id)
+      //randomize pics
+      // .then(randomizePics(friends));
+      this.randomize();
     } else {
       this.setState({
         score: 0,
@@ -42,12 +44,11 @@ class App extends Component {
       alert("You clicked the same one twice!")
     }
   }
+
   //randomize pictures
   randomize = () => {
     this.setState({ friends: randomizePics(friends)})
-  }
-
-
+  };
     //Increase score
     handleIncrement = () => {
       this.setState({ score: this.state.score + 1 })
