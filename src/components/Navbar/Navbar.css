@@ -1,0 +1,12 @@
+nav.navbar {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin-bottom: 0;
+  }
+
+  nav.p {
+    color: white;
+  }
