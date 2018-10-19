@@ -6,7 +6,8 @@ import friends from "./friends.json";
 import Navbar from "./components/Navbar";
 import "./App.css";
 
-//Function to shuffle pictures
+
+//Function to shuffle pictures - 
 function randomizePics(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const k = Math.floor(Math.random() * (i + 1));
@@ -47,37 +48,37 @@ class App extends Component {
 
   //randomize pictures
   randomize = () => {
-    this.setState({ friends: randomizePics(friends)})
+    this.setState({ friends: randomizePics(friends) })
   };
-    //Increase score
-    handleIncrement = () => {
-      this.setState({ score: this.state.score + 1 })
-    };
+  //Increase score
+  handleIncrement = () => {
+    this.setState({ score: this.state.score + 1 })
+  };
 
 
-    // Map over this.state.friends and render a FriendCard component for each friend object
-    render() {
-      return (
-        <Wrapper>
-          <Navbar
-            title="Clicky Game"
-            score={this.state.score}
+  // Map over this.state.friends and render a FriendCard component for each friend object
+  render() {
+    return (
+      <Wrapper>
+        <Navbar
+          title="Clicky Game"
+          score={this.state.score}
+        />
+
+        <Title></Title>
+
+        {this.state.friends.map(friend => (
+          <FriendCard
+            id={friend.id}
+            key={friend.id}
+            image={friend.image}
+            clickedPic={this.clickedPic}
           />
+        ))}
 
-          <Title>CLICK A PICTURE</Title>
-
-          {this.state.friends.map(friend => (
-            <FriendCard
-              id={friend.id}
-              key={friend.id}
-              image={friend.image}
-              clickedPic={this.clickedPic}
-            />
-          ))}
-
-        </Wrapper>
-      );
-    }
+      </Wrapper>
+    );
   }
+}
 
-  export default App;
+export default App;
