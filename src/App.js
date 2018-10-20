@@ -42,7 +42,7 @@ class App extends Component {
         score: 0,
         friendsClicked: []
       });
-      alert("You clicked the same one twice!")
+      alert("Finish him! Sorry, you lost")
     }
   }
 
