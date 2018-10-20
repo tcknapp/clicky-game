@@ -1,5 +1,6 @@
 .card {
   background: #fff;
+  opacity: .95;
   border-radius: 1px;
   height: 150px;
   margin: 4px;
